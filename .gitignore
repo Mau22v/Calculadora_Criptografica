@@ -1,0 +1,36 @@
+# Dependencias y compilaciones de Node.js / React
+node_modules/
+dist/
+build/
+coverage/
+
+# Variables de entorno
+.env
+.env.*
+!.env.example
+
+# Configuración PHP con credenciales
+/criptografia/config/database.php
+
+# Claves privadas y certificados
+*.pem
+*.key
+*.p12
+*.pfx
+
+# Registros y archivos temporales
+*.log
+.DS_Store
+Thumbs.db
+
+# Copias de seguridad de bases de datos
+*.sql
+*.sql.gz
+
+# Archivos temporales de editores
+*.swp
+*.swo
+
+#Archivo de diagnóstico del servidor
+
+/html/info.php

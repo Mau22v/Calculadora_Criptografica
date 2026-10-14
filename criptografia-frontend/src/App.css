@@ -1,0 +1,1475 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html,
+body,
+#root {
+  width: 100%;
+  min-width: 100%;
+  min-height: 100%;
+  margin: 0;
+}
+
+body {
+  overflow-x: hidden;
+}
+
+.app {
+  width: 100%;
+  min-width: 100%;
+  min-height: 100vh;
+  display: flex;
+}
+
+:root {
+  font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  color: #172033;
+  background: #f4f5f6;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+}
+
+button {
+  font-family: inherit;
+}
+
+/* =========================
+   SIDEBAR
+========================= */
+
+.sidebar {
+  width: 250px;
+  min-height: 100vh;
+  background: linear-gradient(180deg, #dc2626 0%, #b91c1c 50%, #7f1d1d 100%);
+  color: #f2f1f1;
+  display: flex;
+  flex-direction: column;
+  padding: 26px 16px;
+  position: fixed;
+  left: 0;
+  top: 0;
+  bottom: 0;
+}
+
+.sidebar-logo {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 4px 10px 30px;
+}
+
+.logo-icon {
+  width: 42px;
+  height: 42px;
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.16);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 21px;
+}
+
+.sidebar-logo h2 {
+  font-size: 19px;
+  font-weight: 700;
+}
+
+.sidebar-logo span {
+  display: block;
+  font-size: 11px;
+  opacity: 0.75;
+  margin-top: 2px;
+}
+
+.sidebar-menu {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.menu-item {
+  width: 100%;
+  border: none;
+  background: transparent;
+  color: rgba(235, 234, 234, 0.78);
+  padding: 13px 14px;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  gap: 13px;
+  font-size: 14px;
+  text-align: left;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.menu-item span {
+  width: 20px;
+  text-align: center;
+  font-size: 16px;
+}
+
+.menu-item:hover {
+  background: rgba(255, 255, 255, 0.1);
+  color: white;
+}
+
+.menu-item.active {
+  background: white;
+  color: #1565c0;
+  font-weight: 600;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+}
+
+.sidebar-footer>span {
+  font-size: 18px;
+}
+
+/* =========================
+   MAIN
+========================= */
+
+.main-content {
+  margin-left: 250px;
+  width: calc(100% - 250px);
+  min-width: 0;
+  min-height: 100vh;
+}
+.topbar {
+  height: 80px;
+  background: rgb(252, 251, 251);
+  border-bottom: 1px solid #e7ebf2;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 38px;
+}
+
+.topbar-title {
+  display: block;
+  font-size: 15px;
+  font-weight: 700;
+}
+
+.topbar-subtitle {
+  display: block;
+  color: #000000;
+  font-size: 11px;
+  margin-top: 3px;
+}
+
+.status {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  font-size: 12px;
+  color: #647084;
+}
+
+.status-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #27ae60;
+}
+
+.content {
+  width: 100%;
+  padding: 20px;
+}
+
+/* =========================
+   HOME
+========================= 
+
+.welcome-section {
+  background: linear-gradient(120deg, #eaf3ff, #f7fbff);
+  border: 1px solid #dceaff;
+  border-radius: 20px;
+  padding: 34px 38px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 28px;
+}
+
+.section-label {
+  color: #1976d2;
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 1.3px;
+}
+
+.welcome-section h1 {
+  font-size: 34px;
+  line-height: 1.15;
+  margin: 9px 0 10px;
+  color: #152238;
+}
+
+.welcome-section h1 span {
+  color: #1976d2;
+}
+
+.welcome-section p {
+  max-width: 610px;
+  color: #68758a;
+  font-size: 14px;
+  line-height: 1.7;
+}
+
+.security-icon {
+  width: 90px;
+  height: 90px;
+  border-radius: 24px;
+  background: white;
+  box-shadow: 0 12px 30px rgba(25, 118, 210, 0.1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 40px;
+}
+
+*/
+
+/* =========================
+   CARDS
+========================= */
+
+.cards-grid {
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  gap: 18px;
+}
+
+.crypto-card {
+  position: relative;
+  /* Borde sutilmente más suave */
+  border: 2px solid #eef2f6;
+  background: white;
+  border-radius: 16px;
+  padding: 38px;
+  display: flex;
+  align-items: flex-start;
+  gap: 20px;
+  text-align: left;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.crypto-card:hover {
+  transform: translateY(-2px);
+  /* Azul claro que combina con la sombra */
+  border-color: #bbdefb; 
+  box-shadow: 0 10px 28px rgba(25, 118, 210, 0.09);
+}
+
+.card-icon {
+  width: 48px;
+  height: 48px;
+  flex-shrink: 0;
+  border-radius: 13px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 20px;
+  font-weight: 700;
+}
+
+/* Colores pastel modernos con texto vibrante para cada ícono */
+.hash-icon {
+  background: #e3f2fd; /* Azul suave */
+  color: #1976d2;      /* Azul fuerte */
+}
+
+.symmetric-icon {
+  background: #e3f2fd; /* Morado suave */
+}
+
+.asymmetric-icon {
+  background: #e3f2fd; /* Esmeralda suave */
+}
+
+.history-icon {
+  background: #e3f2fd; /* Naranja suave */
+  color: #f57c00;      /* Naranja fuerte */
+}
+
+.crypto-card h3 {
+  color: #0f172a; 
+  font-size: 15px;
+  margin-bottom: 7px;
+}
+
+.crypto-card p {
+  /* Texto secundario equilibrado */
+  color: #2f3031; 
+  font-size: 12px;
+  line-height: 1.6;
+  max-width: 520px;
+}
+
+.card-arrow {
+  margin-left: auto;
+  color: #cbd5e1;
+  font-size: 20px;
+  transition: color 0.2s ease;
+}
+
+/* El ícono de la flecha toma color cuando pasas el mouse por la tarjeta */
+.crypto-card:hover .card-arrow {
+  color: #1976d2;
+}
+
+/* =========================
+   CRYPTO PAGES
+========================= */
+
+.page-header {
+  display: flex;
+  align-items: center;
+  justify-content:center;
+  margin-bottom: 20px;
+  border: 1px solid #e3e8f0;
+  border-radius: 18px;
+  background: #ffff;
+  box-shadow: 0 5px 20px rgba(30, 60, 100, 0.04);
+  padding: 10px;
+}
+
+.page-header h1 {
+  font-size: 30px;
+  color: #152238;
+  margin: 8px 0;
+}
+
+.page-header p {
+  color: #758195;
+  font-size: 13px;
+}
+
+.page-icon {
+  width: 65px;
+  height: 65px;
+  border-radius: 18px;
+  background: #eaf3ff;
+  color: #1976d2;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 30px;
+  font-weight: 700;
+}
+
+.crypto-form-card {
+  background: white;
+  border: 1px solid #e3e8f0;
+  border-radius: 18px;
+  padding: 28px;
+  box-shadow: 0 5px 20px rgba(30, 60, 100, 0.04);
+}
+
+.form-group {
+  margin-bottom: 22px;
+}
+
+.form-group label {
+  display: block;
+  color: #344054;
+  font-size: 13px;
+  font-weight: 600;
+  margin-bottom: 8px;
+}
+
+.form-group select,
+.form-group textarea {
+  width: 100%;
+  border: 1px solid #dce2ea;
+  border-radius: 10px;
+  background: #fbfcfe;
+  color: #253247;
+  font-family: inherit;
+  font-size: 13px;
+  outline: none;
+  transition: 0.2s;
+}
+
+.form-group select {
+  height: 44px;
+  padding: 0 12px;
+}
+
+.form-group textarea {
+  padding: 13px;
+  resize: vertical;
+}
+
+.form-group select:focus,
+.form-group textarea:focus {
+  border-color: #1976d2;
+  box-shadow: 0 0 0 3px rgba(25, 118, 210, 0.08);
+  background: white;
+}
+
+.button-row {
+  display: flex;
+  gap: 10px;
+  margin-top: 5px;
+}
+
+.primary-button,
+.secondary-button,
+.copy-button {
+  border: none;
+  border-radius: 9px;
+  padding: 11px 18px;
+  font-size: 12px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.primary-button {
+  background: #1976d2;
+  color: white;
+}
+
+.primary-button:hover {
+  background: #1565c0;
+}
+
+.primary-button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.secondary-button {
+  background: #edf1f6;
+  color: #4c596b;
+}
+
+.secondary-button:hover {
+  background: #e2e7ee;
+}
+
+.error-message {
+  margin-top: 18px;
+  padding: 12px 14px;
+  border-radius: 9px;
+  background: #fff1f1;
+  color: #c62828;
+  border: 1px solid #ffd7d7;
+  font-size: 12px;
+}
+
+.result-section {
+  margin-top: 25px;
+  padding-top: 22px;
+  border-top: 1px solid #edf0f4;
+}
+
+.result-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 9px;
+}
+
+.result-header span {
+  display: block;
+  font-size: 9px;
+  letter-spacing: 1px;
+  color: #8a95a5;
+  font-weight: 700;
+}
+
+.result-header strong {
+  display: block;
+  font-size: 13px;
+  margin-top: 3px;
+  color: #26364c;
+}
+
+.copy-button {
+  background: #eaf3ff;
+  color: #1976d2;
+}
+
+.copy-button:hover {
+  background: #dcecff;
+}
+
+.result-box {
+  background: #f6f8fb;
+  border: 1px solid #e1e6ee;
+  border-radius: 10px;
+  padding: 16px;
+  min-height: 55px;
+  word-break: break-all;
+  color: #344054;
+  font-family: "Courier New", monospace;
+  font-size: 12px;
+  line-height: 1.6;
+}
+
+/* =========================
+   SECCIONES DE CRIPTOGRAFÍA sime
+========================= */
+
+.crypto-section-title {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin-bottom: 28px;
+  justify-content:center;
+}
+/*
+.crypto-section-icon {
+  width: 45px;
+  height: 45px;
+  border-radius: 12px;
+  background: #eaf3ff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 20px;
+}*/
+
+.crypto-section-title h2 {
+  margin: 0;
+  color: #26364c;
+  font-size: 18px;
+}
+
+.crypto-section-title p {
+  margin-top: 5px;
+  color: #7b8798;
+  font-size: 12px;
+}
+
+.decrypt-card {
+  margin-top: 22px;
+}
+
+.decrypt-icon {
+  background: #edf8f1;
+}
+
+
+/* =========================
+   INPUT DE CLAVE
+========================= */
+
+.input-with-button {
+  display: flex;
+  gap: 10px;
+}
+
+.input-with-button input {
+  flex: 1;
+}
+
+.form-group > input {
+  width: 100%;
+  height: 44px;
+  padding: 0 12px;
+  border: 1px solid #dce2ea;
+  border-radius: 10px;
+  background: #fbfcfe;
+  color: #253247;
+  font-family: inherit;
+  font-size: 13px;
+  outline: none;
+  transition: 0.2s;
+  box-sizing: border-box;
+}
+
+.form-group > input:focus {
+  border-color: #1976d2;
+  box-shadow: 0 0 0 3px rgba(25, 118, 210, 0.08);
+  background: white;
+}
+
+.form-group > input::placeholder,
+.input-with-button input::placeholder {
+  color: #a0a9b6;
+}
+
+.form-help {
+  display: block;
+  margin-top: 7px;
+  color: #8a95a5;
+  font-size: 11px;
+  line-height: 1.4;
+}
+
+
+/* =========================
+   RESULTADOS
+========================= */
+
+.data-result {
+  margin-top: 18px;
+}
+
+.data-result-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 8px;
+}
+
+.data-result-header span {
+  color: #5d6878;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.8px;
+}
+
+
+/* =========================
+   INFORMACIÓN DEL CIFRADO
+========================= */
+
+.encryption-info {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+  margin: 20px 0;
+}
+
+.encryption-info > div {
+  padding: 14px;
+  background: #f6f8fb;
+  border: 1px solid #e3e8f0;
+  border-radius: 10px;
+}
+
+.encryption-info span {
+  display: block;
+  color: #8a95a5;
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 0.8px;
+}
+
+.encryption-info strong {
+  display: block;
+  margin-top: 5px;
+  color: #26364c;
+  font-size: 13px;
+}
+
+
+/* =========================
+   RESULTADO DESCIFRADO
+========================= */
+
+.decrypted-result {
+  margin-top: 25px;
+  padding-top: 22px;
+  border-top: 1px solid #edf0f4;
+}
+
+/* =========================
+   HISTORIAL
+========================= */
+
+.history-page {
+  width: 100%;
+}
+
+.history-summary {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 15px;
+  margin-bottom: 20px;
+}
+
+.summary-card {
+  display: flex;
+  align-items: center;
+  gap: 13px;
+  background: white;
+  border: 1px solid #e3e8f0;
+  border-radius: 15px;
+  padding: 18px;
+}
+
+.summary-icon {
+  width: 42px;
+  height: 42px;
+  border-radius: 11px;
+  background: #eaf3ff;
+  color: #1976d2;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  font-size: 18px;
+}
+
+.summary-card span {
+  display: block;
+  color: #8a95a5;
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 0.8px;
+}
+
+.summary-card strong {
+  display: block;
+  margin-top: 4px;
+  color: #26364c;
+  font-size: 17px;
+}
+
+
+/* =========================
+   TARJETA DEL HISTORIAL
+========================= */
+
+.history-card {
+  background: white;
+  border: 1px solid #e3e8f0;
+  border-radius: 18px;
+  box-shadow: 0 5px 20px rgba(30, 60, 100, 0.04);
+  overflow: hidden;
+}
+
+.history-card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 22px 25px;
+  border-bottom: 1px solid #edf0f4;
+}
+
+.history-card-header h2 {
+  margin: 0;
+  color: #26364c;
+  font-size: 16px;
+}
+
+.history-card-header p {
+  margin-top: 5px;
+  color: #8a95a5;
+  font-size: 11px;
+}
+
+.refresh-button {
+  white-space: nowrap;
+}
+
+
+/* =========================
+   TABLA
+========================= */
+
+.table-container {
+  width: 100%;
+  overflow-x: auto;
+}
+
+.history-table {
+  width: 100%;
+  min-width: 950px;
+  border-collapse: collapse;
+}
+
+.history-table th {
+  padding: 13px 15px;
+  background: #f8fafc;
+  color: #7b8798;
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 0.7px;
+  text-align: left;
+  border-bottom: 1px solid #e8edf3;
+}
+
+.history-table td {
+  padding: 14px 15px;
+  border-bottom: 1px solid #edf0f4;
+  color: #344054;
+  font-size: 11px;
+  vertical-align: middle;
+}
+
+.history-table tbody tr:hover {
+  background: #fafcff;
+}
+
+.history-table tbody tr:last-child td {
+  border-bottom: none;
+}
+
+
+/* =========================
+   DATOS
+========================= */
+
+.operation-id {
+  color: #1976d2;
+  font-weight: 700;
+}
+
+.algorithm-text {
+  color: #4c596b;
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+.table-text {
+  display: block;
+  max-width: 190px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.table-result {
+  display: block;
+  max-width: 190px;
+  color: #5d6878;
+  font-family: "Courier New", monospace;
+  font-size: 10px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.date-text {
+  color: #758195;
+  white-space: nowrap;
+  font-size: 10px;
+}
+
+
+/* =========================
+   TIPOS DE OPERACIÓN
+========================= */
+
+.type-badge {
+  display: inline-flex;
+  align-items: center;
+  padding: 5px 9px;
+  border-radius: 20px;
+  background: #eef2f6;
+  color: #5d6878;
+  font-size: 9px;
+  font-weight: 700;
+  white-space: nowrap;
+}
+
+.hash-badge {
+  background: #f0ebff;
+  color: #7048c8;
+}
+
+.symmetric-badge {
+  background: #eaf3ff;
+  color: #1976d2;
+}
+
+.asymmetric-badge {
+  background: #edf8f1;
+  color: #2e7d4f;
+}
+
+
+/* =========================
+   ESTADO
+========================= */
+
+.status-badge {
+  display: inline-flex;
+  align-items: center;
+  padding: 5px 9px;
+  border-radius: 20px;
+  background: #edf8f1;
+  color: #2e7d4f;
+  font-size: 9px;
+  font-weight: 700;
+}
+
+
+/* =========================
+   ESTADO VACÍO / CARGANDO
+========================= */
+
+.history-empty {
+  min-height: 230px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 30px;
+}
+
+.empty-icon {
+  width: 50px;
+  height: 50px;
+  border-radius: 14px;
+  background: #eef3f8;
+  color: #758195;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 22px;
+}
+
+.history-empty h3 {
+  margin: 14px 0 5px;
+  color: #344054;
+  font-size: 14px;
+}
+
+.history-empty p {
+  color: #8a95a5;
+  font-size: 11px;
+}
+
+.loading-spinner {
+  width: 28px;
+  height: 28px;
+  border: 3px solid #e4eaf1;
+  border-top-color: #1976d2;
+  border-radius: 50%;
+  animation: history-spin 0.8s linear infinite;
+}
+
+@keyframes history-spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media (max-width: 850px) {
+
+  .history-summary {
+    grid-template-columns: 1fr;
+  }
+
+  .history-card-header {
+    align-items: flex-start;
+    gap: 15px;
+    flex-direction: column;
+  }
+
+}
+
+
+/* =========================
+   RESPONSIVE Simet
+========================= */
+
+@media (max-width: 650px) {
+
+  .input-with-button {
+    flex-direction: column;
+  }
+
+  .encryption-info {
+    grid-template-columns: 1fr;
+  }
+
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media (max-width: 900px) {
+
+  .sidebar {
+    width: 210px;
+  }
+
+  .main-content {
+    margin-left: 210px;
+    width: calc(100% - 210px);
+  }
+
+  .content {
+    padding: 25px;
+  }
+
+  .cards-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .welcome-section h1 {
+    font-size: 28px;
+  }
+}
+
+@media (max-width: 650px) {
+
+  .sidebar {
+    width: 70px;
+    padding: 20px 8px;
+  }
+
+  .sidebar-logo > div:last-child,
+  .menu-item:not(.active) {
+    font-size: 0;
+  }
+
+  .sidebar-logo h2,
+  .sidebar-logo span,
+  .sidebar-footer div,
+  .menu-item {
+    overflow: hidden;
+  }
+
+  .sidebar-logo {
+    justify-content: center;
+    padding-left: 0;
+    padding-right: 0;
+  }
+
+  .main-content {
+    margin-left: 70px;
+    width: calc(100% - 70px);
+  }
+
+  .topbar {
+    padding: 0 18px;
+  }
+
+  .status {
+    display: none;
+  }
+
+  .content {
+    padding: 18px;
+  }
+
+  .welcome-section {
+    padding: 25px;
+  }
+
+  .security-icon {
+    display: none;
+  }
+}
+
+
+/* =========================
+   RSA / ASIMÉTRICO
+========================= */
+
+.rsa-icon {
+  background: #fff4e5;
+  color: #e58a00;
+}
+
+.key-section {
+  margin-top: 25px;
+  padding-top: 22px;
+  border-top: 1px solid #edf0f4;
+}
+
+.key-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 9px;
+}
+
+.key-header span {
+  display: block;
+  color: #8a95a5;
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 1px;
+}
+
+.key-header strong {
+  display: block;
+  color: #26364c;
+  font-size: 12px;
+  margin-top: 3px;
+}
+
+.key-box {
+  width: 100%;
+  box-sizing: border-box;
+  resize: vertical;
+  padding: 14px;
+  border: 1px solid #dce2ea;
+  border-radius: 10px;
+  background: #f7f9fc;
+  color: #344054;
+  font-family: "Courier New", monospace;
+  font-size: 10px;
+  line-height: 1.55;
+  outline: none;
+}
+
+.key-box:focus {
+  border-color: #1976d2;
+  box-shadow: 0 0 0 3px rgba(25, 118, 210, 0.08);
+}
+
+.private-key-box {
+  background: #fffaf2;
+  border-color: #f1dfbd;
+}
+
+.crypto-form-card + .crypto-form-card {
+  margin-top: 22px;
+}
+
+
+
+.communication-page {
+  width: 100%;
+  max-width: 1600px;
+  margin: 0 auto;
+  color: #172033;
+}
+
+.communication-heading {
+  margin-bottom: 24px;
+}
+
+.communication-heading h1 {
+  margin: 8px 0;
+  color: #152238;
+  font-size: 30px;
+}
+
+.communication-heading p {
+  color: #758195;
+  font-size: 13px;
+  line-height: 1.6;
+}
+
+.communication-tabs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 22px;
+}
+
+.communication-tab {
+  padding: 12px 18px;
+  border: 1px solid #dce3ed;
+  border-radius: 10px;
+  background: white;
+  color: #526176;
+  font: inherit;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.communication-tab.selected {
+  color: #1565c0;
+  border-color: #9fc7f3;
+  background: #edf5ff;
+}
+
+.simulation-toolbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 18px;
+  padding: 20px 22px;
+  margin-bottom: 20px;
+  border: 1px solid #dce5f0;
+  border-radius: 14px;
+  background: white;
+}
+
+.simulation-toolbar strong {
+  display: block;
+  margin-bottom: 5px;
+  font-size: 15px;
+}
+
+.simulation-toolbar p {
+  color: #758195;
+  font-size: 12px;
+  line-height: 1.6;
+}
+
+.communication-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 0.9fr) minmax(0, 1fr);
+  align-items: start;
+  gap: 16px;
+}
+/* =========================
+   PERSON PANELS (Alice, Bob, Eve)
+========================= */
+
+.person-panel {
+  min-width: 0;
+  padding: 20px;
+  /* Borde más limpio y sombra un poco más profunda y suave */
+  border: 1px solid #e2e8f0; 
+  border-radius: 16px;
+  background: white;
+  box-shadow: 0 4px 20px rgba(15, 23, 42, 0.05);
+}
+
+/* Colores de identidad más vibrantes */
+.alice-panel {
+  border-top: 4px solid #3b82f6; /* Azul brillante */
+}
+
+.eve-panel {
+  border-top: 4px solid #f59e0b; /* Ámbar/Naranja de alerta */
+  background: #fffdf8; /* Fondo cálido muy sutil */
+}
+
+.bob-panel {
+  border-top: 4px solid #10b981; /* Verde esmeralda */
+}
+
+.person-heading {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding-bottom: 17px;
+  margin-bottom: 17px;
+  border-bottom: 1px solid #f1f5f9;
+}
+
+/* Íconos/Avatares con colores que combinan con el borde superior */
+.person-heading > span {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 43px;
+  height: 43px;
+  flex-shrink: 0;
+  border-radius: 13px;
+  font-size: 23px;
+  /* Alice por defecto */
+  background: #eff6ff;
+  color: #2563eb; 
+}
+
+.eve-panel .person-heading > span {
+  background: #fffbeb;
+  color: #d97706;
+}
+
+.bob-panel .person-heading > span {
+  background: #ecfdf5;
+  color: #059669;
+}
+
+.person-heading h2 {
+  font-size: 17px;
+  margin-bottom: 3px;
+  color: #0f172a; /* Casi negro, mejor legibilidad */
+}
+
+.person-heading small {
+  color: #64748b; /* Gris pizarra medio, visible pero secundario */
+  font-size: 12px; /* Subido de 11 a 12px */
+}
+
+.person-panel label {
+  display: block;
+  margin: 16px 0 7px;
+  color: #334155;
+  font-size: 13px; /* Subido de 12 a 13px para leer mejor */
+  font-weight: 600;
+}
+
+/* Esto fuerza a que el bloque de texto (título y subtítulo) se alinee a la izquierda y quite márgenes extra */
+.person-heading > div {
+  text-align: left;
+  margin-left: 0;
+  flex: 1; /* Opcional: toma el resto del espacio pero mantiene el texto a la izquierda */
+}
+
+/* Textareas mejoradas */
+.person-panel textarea {
+  display: block;
+  width: 100%;
+  min-width: 0;
+  max-width: 100%;
+  padding: 12px; /* Un poco más de espacio interior */
+  border: 1px solid #cbd5e1;
+  border-radius: 9px;
+  background: #f8fafc;
+  color: #1e293b;
+  font-family: inherit;
+  font-size: 12px; /* Subido de 11 a 12px */
+  line-height: 1.55;
+  overflow-wrap: anywhere;
+  resize: vertical;
+  transition: all 0.2s ease;
+}
+
+.person-panel textarea[readonly] {
+  font-family: "Courier New", Courier, monospace;
+  font-size: 11px; /* Subido de 10 a 11px */
+  background: #f1f5f9;
+  color: #475569;
+  overflow-wrap: anywhere;
+  word-break: break-word;
+}
+
+.person-panel textarea:focus {
+  outline: none;
+  border-color: #3b82f6;
+  background: #ffffff;
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.15);
+}
+
+/* Botones */
+.person-panel button {
+  width: 100%;
+  margin-top: 12px;
+  white-space: normal;
+  line-height: 1.4;
+}
+
+.person-panel .primary-button,
+.person-panel .secondary-button,
+.person-panel .attack-button {
+  padding: 11px 12px;
+  border: 0;
+  border-radius: 9px;
+  font-family: inherit;
+  font-size: 13px; /* Subido de 11 a 13px */
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.person-panel .primary-button {
+  background: #2563eb; /* Azul más moderno */
+  color: white;
+}
+
+.person-panel .primary-button:hover {
+  background: #1d4ed8;
+  box-shadow: 0 4px 12px rgba(37, 99, 235, 0.2);
+}
+
+.person-panel .secondary-button {
+  background: #f1f5f9;
+  color: #475569;
+}
+
+.person-panel .secondary-button:hover {
+  background: #e2e8f0;
+  color: #1e293b;
+}
+
+.person-panel .attack-button {
+  background: #ea580c; /* Naranja/Rojo de ataque fuerte */
+  color: white;
+}
+
+.person-panel .attack-button:hover {
+  background: #c2410c;
+  box-shadow: 0 4px 12px rgba(234, 88, 12, 0.2);
+}
+
+.person-panel button:disabled,
+.simulation-toolbar button:disabled {
+  cursor: not-allowed;
+  opacity: 0.5;
+  box-shadow: none !important;
+}
+
+/* Alertas y avisos con mejor contraste */
+.panel-hint {
+  margin-top: 15px;
+  color: #64748b; /* Reemplazado el café lodoso por un gris pizarra limpio */
+  font-size: 12px;
+  line-height: 1.6;
+}
+
+.attack-result {
+  margin-top: 14px;
+  padding: 12px;
+  border: 1px solid #fde68a;
+  border-radius: 9px;
+  background: #fffbeb;
+  color: #92400e; /* Contraste oscuro para leer sin esfuerzo */
+  font-size: 12px;
+  line-height: 1.65;
+  overflow-wrap: anywhere;
+}
+
+.communication-notice {
+  padding: 12px 15px;
+  margin-bottom: 16px;
+  border: 1px solid #a7f3d0;
+  border-radius: 9px;
+  background: #ecfdf5;
+  color: #065f46; /* Verde oscuro para excelente legibilidad */
+  font-size: 12px;
+  line-height: 1.6;
+}
+
+.simulation-footer {
+  margin-top: 20px;
+  padding: 15px 17px;
+  border: 1px solid #e2e8f0;
+  border-radius: 11px;
+  background: #f8fafc;
+  color: #64748b;
+  font-size: 12px;
+  line-height: 1.7;
+}
+
+.simulation-footer strong {
+  color: #0f172a;
+}
+
+@media (max-width: 1200px) {
+  .communication-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .eve-panel {
+    grid-column: 1 / -1;
+    grid-row: 2;
+  }
+}
+
+@media (max-width: 760px) {
+  .communication-grid {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .eve-panel {
+    grid-column: auto;
+    grid-row: auto;
+  }
+
+  .simulation-toolbar {
+    align-items: stretch;
+    flex-direction: column;
+  }
+
+  .communication-heading h1 {
+    font-size: 25px;
+  }
+}
+
+.signature-badge {
+  background-color: #f3e8ff;
+  color: #7e22ce;
+}
